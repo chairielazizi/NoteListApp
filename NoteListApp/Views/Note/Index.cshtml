@@ -1,0 +1,43 @@
+﻿@model IEnumerable<NoteListApp.Models.Note>
+
+<div class="container p-4">
+    <div class="row p-4">
+        <div class="h1 col" style="color:whitesmoke">Note List</div>
+        <div class="col text-right">
+            <button type="button" class="btn btn-success">
+                <a style="color:white;text-decoration:none" asp-controller="Note" asp-action="Create">Add Note</a> 
+            </button>
+        </div>
+    </div>
+</div>
+
+<br />
+
+@if (Model.Count() > 0)
+            {
+                <table class="table table-bordered">
+                    <thead >
+                        <tr class="table-info">
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var list in Model)
+                        {
+                            <tr>
+                                <td width="35%" class="table-light">@list.name</td>
+                                <td width="35%" class="table-light">@list.description</td>
+                                <td width="30%" class="table-warning">
+                                    <div class="row p-2 justify-content-center">
+                                        <a asp-controller="Note" asp-action="Update" asp-route-id="@list.ID" class="col p-2 btn btn-warning">Edit</a>
+                                        <a asp-controller="Note" asp-action="Delete" asp-route-id="@list.ID" class="col p-2 btn btn-danger">Delete</a>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
