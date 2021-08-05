@@ -1,5 +1,6 @@
 # NoteListApp
 A simple note lists app build with ASP.NET Core (MVC)
+<p>The link to the website is <a href="https://notelistapp.azurewebsites.net/">here</a></p>
 
 ### Some screenshot
 <img src="https://github.com/chairielazizi/NoteListApp/blob/main/img/ss1.png"
